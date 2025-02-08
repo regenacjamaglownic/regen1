@@ -1,3 +1,12 @@
+// Проверяем, загружен ли SDK
+if (Telegram.WebApp.initDataUnsafe) {
+    const user = Telegram.WebApp.initDataUnsafe.user;
+    if (user) {
+        console.log("Данные пользователя:", user);
+        // Пример вывода данных пользователя
+        alert(`Привет, ${user.first_name}!`);
+    }
+});
 // Обработчик для кнопки "Определить рулевую рейку по VIN"
 document.getElementById('checkVin').addEventListener('click', function () {
     const vin = prompt("Введите VIN-код автомобиля:");
